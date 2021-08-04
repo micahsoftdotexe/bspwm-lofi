@@ -10,12 +10,13 @@ xinput --set-prop 'Corsair Corsair Gaming HARPOON RGB Mouse' 'libinput Accel Spe
 #set the cursor so there is no X
 xsetroot -cursor_name left_ptr &
 #pkill picom
-polybar micah &
+#polybar micah &
+polybar left -c ~/.config/polybar/left_bar &
 variety &
 blueberry-tray &
 run volumeicon &
 /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
-picom --config ~/.config/picom/picom.conf&
+picom --config ~/.config/picom/picom.conf &
 bspc monitor DP-3 -d I II III IV V
 bspc monitor DP-2 -d VI VII VIII IX X
 ~/.screenlayout/normalscreen.sh
