@@ -42,8 +42,8 @@ super + g
 # Print
 #
 Print
-	#sleep 0.25 && scrot -s -e 'xclip -selection clipboard -t image/png -i $f'
-	scrot
+	sleep 1 && scrot -s -e 'xclip -selection clipboard -t image/png -i $f' && notify-send 'Screenshot captured'
+	#scrot
 
 #
 # state/flags
