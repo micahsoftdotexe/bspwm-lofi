@@ -15,7 +15,7 @@ variety &
 blueberry-tray &
 run volumeicon &
 /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
-picom &
+picom --config ~/.config/picom/picom.conf&
 bspc monitor DP-3 -d I II III IV V
 bspc monitor DP-2 -d VI VII VIII IX X
 ~/.screenlayout/normalscreen.sh
