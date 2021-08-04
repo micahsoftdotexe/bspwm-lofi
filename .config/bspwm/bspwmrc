@@ -1,0 +1,35 @@
+#! /bin/sh
+
+pgrep -x sxhkd > /dev/null || sxhkd &
+# Terminate already running bar instances
+killall -q polybar
+
+#mouse sensitivity settings
+xinput --set-prop 'Corsair Corsair Gaming HARPOON RGB Mouse' 'libinput Accel Profile Enabled' 0, 1
+xinput --set-prop 'Corsair Corsair Gaming HARPOON RGB Mouse' 'libinput Accel Speed' -0.8
+#set the cursor so there is no X
+xsetroot -cursor_name left_ptr &
+#pkill picom
+polybar micah &
+variety &
+blueberry-tray &
+run volumeicon &
+/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
+picom &
+bspc monitor DP-3 -d I II III IV V
+bspc monitor DP-2 -d VI VII VIII IX X
+~/.screenlayout/normalscreen.sh
+
+bspc config border_width         2
+bspc config window_gap          15
+
+bspc config split_ratio          0.52
+bspc config borderless_monocle   true
+bspc config gapless_monocle      true
+
+bspc rule -a Gimp desktop='^8' state=floating follow=on
+bspc rule -a Chromium desktop='^2'
+bspc rule -a mplayer2 state=floating
+bspc rule -a Kupfer.py focus=on
+bspc rule -a Screenkey manage=off
+bspc wm --reorder-monitors DP-3 DP-2
