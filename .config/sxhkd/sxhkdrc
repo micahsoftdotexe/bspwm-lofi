@@ -37,13 +37,16 @@ super + y
 # swap the current node and the biggest window
 super + g
 	bspc node -s biggest.window
-
+# swap monitors 
+super + r
+	bspc wm --reorder-monitors DP-3 DP-2
 #
 # Print
 #
 Print
 	sleep 1 && scrot -s -e 'xclip -selection clipboard -t image/png -i $f' && notify-send 'Screenshot captured'
-	#scrot
+super + Print
+	flameshot launcher
 
 #
 # state/flags

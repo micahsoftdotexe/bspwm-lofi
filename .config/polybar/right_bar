@@ -1,0 +1,35 @@
+[bar/right]
+
+width = 28%
+height = 30
+;offset-x = 67%
+offset-x = 69%
+offset-y = 0.2%
+background = #AF234A59
+foreground = #000000
+padding-left = 2
+padding-right = 2
+radius = 17
+wm-restack = bspwm
+font-0 = Quicksand:style=Medium:size=10;3
+;font-2 = Iosevka Nerd Font:style=Medium:size=17;4
+
+;module-margin-left=0
+;module-margin-right=0
+;border-top-size =4
+;border-bottom-size =4
+;border-left-size = 4
+;border-color=#60BB7D
+modules-center = date
+
+[module/date]
+type = internal/date
+interval = 30
+date = "%Y-%b-%d"
+date-alt = 
+time = "%I:%M"
+time-alt = 
+label = %date% %time%
+format-padding = 1
+;format-background=#AFD1EBE0
+;format-radius = 17

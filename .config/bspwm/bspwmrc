@@ -12,9 +12,12 @@ xsetroot -cursor_name left_ptr &
 #pkill picom
 #polybar micah &
 polybar left -c ~/.config/polybar/left_bar &
+polybar right -c ~/.config/polybar/right_bar &
 variety &
 blueberry-tray &
-run volumeicon &
+flameshot &
+#run volumeicon &
+polychromatic-tray-applet &
 /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 picom --config ~/.config/picom/picom.conf &
 bspc monitor DP-3 -d I II III IV V
