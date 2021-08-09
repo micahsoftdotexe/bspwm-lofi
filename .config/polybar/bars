@@ -1,0 +1,72 @@
+[bar/date]
+
+width = 15%
+height = 38
+offset-x = 85%
+offset-y = 0.2%
+background = #AFF28A80
+foreground = #000000
+padding-left = 2
+padding-right = 2
+radius = 20
+wm-restack = bspwm
+font-0 = Quicksand:style=Medium:size=10;3
+font-1 = Material Icons:style=Regular;3
+modules-center = date
+modules-right = powermenu
+
+[bar/tray]
+
+width = 15%
+height = 38
+offset-x = 2%
+offset-y = 0.2%
+background = #AF234A59
+foreground = #000000
+padding-left = 2
+padding-right = 2
+padding-top = 3
+radius = 20
+wm-restack = bspwm
+font-0 = unifont:fontformat=truetype:size=8:antialias=false;3
+font-1 = Material Icons:style=Regular;3
+modules-left = space
+tray-position = center
+modules-right = space
+
+[module/powermenu]
+
+type = custom/menu
+expand-right = true
+format-spacing = 1
+format-underline = #BF616A
+label-open = ""
+label-close = " Close"
+label-separator = |
+label-separator-foreground = #A3BE8C
+menu-0-0 = ""
+menu-0-0-exec = menu-open-1
+menu-0-1 = ""
+menu-0-1-exec = menu-open-2
+menu-1-0 = ""
+menu-1-0-exec = reboot
+menu-1-1 = "Cancel "
+menu-1-1-exec = menu-open-0
+menu-2-0 = "Power off"
+menu-2-0-exec = poweroff
+menu-2-1 = "Cancel "
+menu-2-1-exec = menu-open-0
+
+[module/space]
+type = custom/text
+content = " "
+
+[module/date]
+type = internal/date
+interval = 30
+date = " %Y-%b-%d"
+date-alt = 
+time = " %I:%M"
+time-alt = 
+label = %date% %time%
+format-padding = 1

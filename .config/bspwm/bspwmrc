@@ -11,8 +11,8 @@ xinput --set-prop 'Corsair Corsair Gaming HARPOON RGB Mouse' 'libinput Accel Spe
 xsetroot -cursor_name left_ptr &
 #pkill picom
 #polybar micah &
-polybar left -c ~/.config/polybar/left_bar &
-polybar right -c ~/.config/polybar/right_bar &
+polybar date -c ~/.config/polybar/right_bar &
+polybar tray -c ~/.config/polybar/right_bar &
 variety &
 blueberry-tray &
 flameshot &
