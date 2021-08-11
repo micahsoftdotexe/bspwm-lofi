@@ -11,8 +11,8 @@ xinput --set-prop 'Corsair Corsair Gaming HARPOON RGB Mouse' 'libinput Accel Spe
 xsetroot -cursor_name left_ptr &
 #pkill picom
 #polybar micah &
-polybar date -c ~/.config/polybar/right_bar &
-polybar tray -c ~/.config/polybar/right_bar &
+polybar date -c ~/.config/polybar/bars &
+polybar tray -c ~/.config/polybar/bars &
 variety &
 blueberry-tray &
 flameshot &
@@ -23,6 +23,7 @@ picom --config ~/.config/picom/picom.conf &
 bspc monitor DP-3 -d I II III IV V
 bspc monitor DP-2 -d VI VII VIII IX X
 ~/.screenlayout/normalscreen.sh
+xset -dpms s off
 
 bspc config border_width         2
 bspc config window_gap          15
@@ -31,9 +32,7 @@ bspc config split_ratio          0.52
 bspc config borderless_monocle   true
 bspc config gapless_monocle      true
 
+bspc rule -a terminator state=tiling
 bspc rule -a Gimp desktop='^8' state=floating follow=on
 bspc rule -a Chromium desktop='^2'
-bspc rule -a mplayer2 state=floating
-bspc rule -a Kupfer.py focus=on
-bspc rule -a Screenkey manage=off
 bspc wm --reorder-monitors DP-3 DP-2
