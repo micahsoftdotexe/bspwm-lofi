@@ -7,21 +7,22 @@ killall -q polybar
 #mouse sensitivity settings
 xinput --set-prop 'Corsair Corsair Gaming HARPOON RGB Mouse' 'libinput Accel Profile Enabled' 0, 1
 xinput --set-prop 'Corsair Corsair Gaming HARPOON RGB Mouse' 'libinput Accel Speed' -0.8
-#set the cursor so there is no X
+#set the cursor so there is no X cursor
 xsetroot -cursor_name left_ptr &
-#pkill picom
-#polybar micah &
 polybar date -c ~/.config/polybar/bars &
 polybar tray -c ~/.config/polybar/bars &
+polybar workspace -c ~/.config/polybar/bars &
+polybar workspacealt -c ~/.config/polybar/bars &
 variety &
 blueberry-tray &
 flameshot &
-#run volumeicon &
 polychromatic-tray-applet &
 /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 picom --config ~/.config/picom/picom.conf &
-bspc monitor DP-3 -d I II III IV V
-bspc monitor DP-2 -d VI VII VIII IX X
+#bspc monitor DP-3 -d I II III IV V
+bspc monitor DP-3 -d 1 2 3 4 5
+#bspc monitor DP-2 -d VI VII VIII IX X
+bspc monitor DP-2 -d 6 7 8 9 10
 ~/.screenlayout/normalscreen.sh
 xset -dpms s off
 

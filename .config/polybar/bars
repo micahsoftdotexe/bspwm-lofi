@@ -1,19 +1,3 @@
-[bar/date]
-
-width = 15%
-height = 38
-offset-x = 85%
-offset-y = 0.2%
-background = #AFF28A80
-foreground = #000000
-padding-left = 2
-padding-right = 2
-radius = 20
-wm-restack = bspwm
-font-0 = Quicksand:style=Medium:size=10;3
-font-1 = Material Icons:style=Regular;3
-modules-center = date
-modules-right = powermenu
 
 [bar/tray]
 
@@ -33,6 +17,58 @@ font-1 = Material Icons:style=Regular;3
 modules-left = space
 tray-position = center
 modules-right = space
+
+[bar/date]
+
+width = 15%
+height = 38
+offset-x = 83%
+offset-y = 0.2%
+background = #AFF28A80
+foreground = #000000
+padding-left = 2
+padding-right = 2
+radius = 20
+wm-restack = bspwm
+font-0 = Quicksand:style=Medium:size=10;3
+font-1 = Material Icons:style=Regular;3
+modules-center = date
+modules-right = powermenu
+
+
+[bar/workspace]
+width = 15%
+height = 38
+offset-x = 45%
+offset-y = 0.2%
+background = #AF7E9ABF
+foreground = #000000
+padding-left = 2
+padding-right = 2
+radius = 20
+;font-0 = Quicksand:style=Medium:size=10;3
+;font-1 = Material Icons:style=Regular;3
+font-0 = CaskaydiaCove Nerd Font Mono:style=Book:size=18;3
+modules-center = bspwm
+wm-restack = bspwm
+
+[bar/workspacealt]
+monitor = DP-2
+width = 15%
+height = 38
+offset-x = 45%
+offset-y = 0.2%
+background = #AF7E9ABF
+foreground = #000000
+padding-left = 2
+padding-right = 2
+radius = 20
+;font-0 = Quicksand:style=Medium:size=10;3
+;font-1 = Material Icons:style=Regular;3
+font-0 = CaskaydiaCove Nerd Font Mono:style=Book:size=18;3
+modules-center = bspwm
+wm-restack = bspwm
+
 
 [module/powermenu]
 
@@ -70,3 +106,44 @@ time = " %I:%M"
 time-alt = 
 label = %date% %time%
 format-padding = 1
+
+[module/cpu]
+type = internal/cpu
+interval = 2
+
+label = "%percentage:2%%"
+
+format-prefix = "  "
+
+[module/bspwm]
+
+type = internal/bspwm
+; font = CaskaydiaCove Nerd Font Mono:style=Book
+pin-workspaces = true
+ws-icon-0 = 1;  
+ws-icon-1 = 2;  
+ws-icon-2 = 3;  
+ws-icon-3 = 4;  
+ws-icon-4 = 5;  
+ws-icon-5 = 6;  
+ws-icon-6 = 7;  
+ws-icon-7 = 8;  
+ws-icon-8 = 9;  
+ws-icon-9 = 10;  
+ws-icon-default =   
+format = <label-state> <label-mode>
+
+label-unfocused = %icon%
+;label-unfocused-padding = 4
+;label-unfocused-foreground = #000000
+;label-unfocused-underline = #fba922
+
+label-focused = %icon%
+label-focused-foreground = #ffffff
+;label-focused-background = #3f3f3f
+label-focused-underline = #fba922
+;label-focused-padding = 4
+
+label-occupied = %icon%
+label-urgent = %icon%
+label-empty = %icon%
