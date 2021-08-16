@@ -3,27 +3,41 @@
 pgrep -x sxhkd > /dev/null || sxhkd &
 # Terminate already running bar instances
 killall -q polybar
+#killall -q variety
 
 #mouse sensitivity settings
 xinput --set-prop 'Corsair Corsair Gaming HARPOON RGB Mouse' 'libinput Accel Profile Enabled' 0, 1
 xinput --set-prop 'Corsair Corsair Gaming HARPOON RGB Mouse' 'libinput Accel Speed' -0.8
 #set the cursor so there is no X cursor
 xsetroot -cursor_name left_ptr &
-polybar date -c ~/.config/polybar/bars &
-polybar tray -c ~/.config/polybar/bars &
-polybar workspace -c ~/.config/polybar/bars &
-polybar workspacealt -c ~/.config/polybar/bars &
-variety &
+
+# start autostart and tray applications
+# a= ps -aux | grep variety | count
+if [ "$(ps -aux | grep variety | wc -l)" -lt "2" ]
+then
+    variety &
+fi
+
 blueberry-tray &
 flameshot &
 polychromatic-tray-applet &
 /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 picom --config ~/.config/picom/picom.conf &
+
+#start all polybar instances
+polybar date -c ~/.config/polybar/bars &
+polybar tray -c ~/.config/polybar/bars &
+polybar workspace -c ~/.config/polybar/bars &
+polybar workspacealt -c ~/.config/polybar/bars &
+
+#setup monitors
 #bspc monitor DP-3 -d I II III IV V
 bspc monitor DP-3 -d 1 2 3 4 5
 #bspc monitor DP-2 -d VI VII VIII IX X
 bspc monitor DP-2 -d 6 7 8 9 10
 ~/.screenlayout/normalscreen.sh
+
+#turn off sleep
 xset -dpms s off
 
 bspc config border_width         2
